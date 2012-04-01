@@ -37,3 +37,5 @@ gem 'nokogiri'
 group :production do
   gem 'pg'
 end
+# Heroku
+gem 'dm-postgres-adapter', :group => :production
