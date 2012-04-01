@@ -34,3 +34,6 @@ gem 'padrino', '0.10.6'
 
 gem 'nokogiri'
 
+group :production do
+  gem 'pg'
+end
