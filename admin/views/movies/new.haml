@@ -1,0 +1,14 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first=link_to pat(:list), url(:movies, :index)
+      %li.active=link_to pat(:new), url(:movies, :new)
+  .content
+    %h2.title
+      =pat(:new)
+      =mt(:movie)
+    .inner
+      -form_for :movie, url(:movies, :create), :class => :form do |f|
+        =partial "movies/form", :locals => { :f => f }
+
+-content_for :sidebar, partial("base/sidebar")

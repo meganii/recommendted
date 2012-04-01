@@ -1,0 +1,3 @@
+    .inner
+      -form_for :movie, url(:movies, :create), :class => :form do |f|
+        =partial "movies/form", :locals => { :f => f }

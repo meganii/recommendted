@@ -1,0 +1,9 @@
+class Movie
+  include DataMapper::Resource
+
+  # property <name>, <type>
+  property :id, Serial
+  property :id, String
+  property :title, String
+  property :url, String
+end

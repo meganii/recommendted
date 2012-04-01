@@ -1,0 +1,3 @@
+- @movie.each do |m|
+  %p #{m.title} #{m.url} #{m.mp4}
+  %video(src="#{m.mp4}" controls)
