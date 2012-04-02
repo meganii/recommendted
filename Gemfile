@@ -19,23 +19,17 @@ gem 'dm-constraints'
 gem 'dm-aggregates'
 gem 'dm-core'
 
-# Test requirements
-
-# Padrino Stable Gem
-gem 'padrino', '0.10.6'
-
-# Or Padrino Edge
-# gem 'padrino', :git => 'git://github.com/padrino/padrino-framework.git'
-
-# Or Individual Gems
-# %w(core gen helpers cache mailer admin).each do |g|
-#   gem 'padrino-' + g, '0.10.6'
-# end
-
 gem 'nokogiri'
 
 group :production do
   gem 'pg'
 end
+
 # Heroku
 gem 'dm-postgres-adapter', :group => :production
+
+
+# Padrino Stable Gem
+gem 'padrino', '0.10.6'
+
+
