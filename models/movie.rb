@@ -6,5 +6,6 @@ class Movie
   property :title, String
   property :url, String
   property :mp4, String
+  property :img, String
   
 end

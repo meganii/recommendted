@@ -1,0 +1,9 @@
+%html5
+  %head
+  %body
+    .header
+      %h1=RecommendTed
+    .container
+      - yield
+    .footer  
+      

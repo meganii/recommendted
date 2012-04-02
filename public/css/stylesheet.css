@@ -1,0 +1,31 @@
+ul{
+    list-style:none
+}
+
+#header {
+    width:100%;
+    height:70px;
+    margin-top:5px;
+    color:#FFFFFF;
+}
+
+#footer {
+    clear:both;
+    width:100%;
+    min-width:920px;
+    margin-top:30px;
+    background-color:#000000;
+    color:#FFFFFF;
+}
+
+.copyright{float:right;margin-left:1em}
+
+.share{
+    position:relative;
+    top:0.1em;
+    float:right;
+}
+
+.share li{
+    float:right;
+}

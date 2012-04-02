@@ -1,7 +1,27 @@
-%html5
-  %head
-    %link(href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet")
-    %script(src="http://vjs.zencdn.net/c/video.js")
+-# coding: utf-8
+!!!
+%head
+  %link(href="css/bootstrap.min.css" rel="stylesheet")
+    %link(href="css/stylesheet.css" rel="stylesheet")
+    %title="RecommendTed -れこめんてっど"
   %body
-    .container
-      - yield
+    #header
+      %h1
+        RecommendTed - れこめんてっど
+      %p(class="copyright")
+        %small
+          Developed by @
+          %a(href="http://twitter.com/meganii")
+            meganii 
+      %ul(class="share")
+        %li
+          %a(href="http://b.hatena.ne.jp/entry/http%3A%2F%2Frecommendted.heroku.com%2F" class="hatena-bookmark-button" data-hatena-bookmark-title="れこめんてっど" data-hatena-bookmark-layout="standard" title="add")
+            %img(src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="add" width="20" height="20" style="border: none;")
+              %script(type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async")
+        %li
+          
+    .container-fluid
+      = yield
+
+    #footer
+      footer

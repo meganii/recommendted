@@ -1,3 +1,7 @@
-- @movie.each do |m|
-  %p #{m.title} #{m.url} #{m.mp4}
-  %video(src="#{m.mp4}" controls)
+.row-fluid
+  - @movie.each do |m|
+    .span4(style="margin:5px;")
+      %img(src="#{m.img}")
+      %video(src="#{m.mp4}" controls width="250px")
+      %p="#{m.title}"
+      %img(src="http://b.hatena.ne.jp/entry/image/#{m.url}")
