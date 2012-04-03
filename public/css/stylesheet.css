@@ -1,3 +1,7 @@
+html,body {
+    height:100%;
+}
+
 ul{
     list-style:none
 }
@@ -9,6 +13,57 @@ ul{
     color:#FFFFFF;
 }
 
+#grid-content {
+	overflow: hidden;
+	height: 0;
+	border: 1px solid #eb6100;
+	background-color: #EEEEEE;
+	background-image: url(./images/vgrid_back.gif);
+	background-repeat: repeat;
+
+}
+
+#grid-content div {
+	width: auto;
+	height: auto;
+	border: 1px solid #000000;
+	background-color: #AAAAAA;
+	color: #FFFFFF;
+	margin: 5px;
+	padding: 3px;
+}
+
+#grid-content .image {
+	width: 200px;
+	height: auto;
+	border: 1px solid #000000;
+	background-color: #AAAAAA;
+	color: #FFFFFF;
+	margin: 5px;
+	padding: 3px;
+}
+
+
+
+#grid-content div h3 {
+	line-height: 1.1em;
+	margin: 0;
+	padding: 0;
+}
+#grid-content div p {
+	margin: 0;
+	padding: 0;
+}
+
+
+#gray-layer {
+    margin: 0 auto;
+    height:100%;
+    width:100%;
+    opacity: 0.5;
+    background-color: gray;
+}
+
 #footer {
     clear:both;
     width:100%;
@@ -18,7 +73,10 @@ ul{
     color:#FFFFFF;
 }
 
-.copyright{float:right;margin-left:1em}
+.copyright{
+    float:right;
+    margin-left:1em;
+}
 
 .share{
     position:relative;

@@ -1,7 +1,8 @@
-.row-fluid
-  - @movie.each do |m|
-    .span4(style="margin:5px;")
-      %img(src="#{m.img}")
-      %video(src="#{m.mp4}" controls width="250px")
-      %p="#{m.title}"
-      %img(src="http://b.hatena.ne.jp/entry/image/#{m.url}")
+-# .row-fluid
+- @movie.each do |m|
+  .image
+    %a(class="additem" href="#")
+      -# %img(src="#{m.img}")
+      %video(class="movie" src="#{m.mp4}" poster="#{m.img}" width="200px" controls)
+    %p="#{m.title}"
+    %img(src="http://b.hatena.ne.jp/entry/image/#{m.url}")

@@ -2,26 +2,68 @@
 !!!
 %head
   %link(href="css/bootstrap.min.css" rel="stylesheet")
-    %link(href="css/stylesheet.css" rel="stylesheet")
-    %title="RecommendTed -れこめんてっど"
-  %body
-    #header
-      %h1
-        RecommendTed - れこめんてっど
-      %p(class="copyright")
-        %small
-          Developed by @
-          %a(href="http://twitter.com/meganii")
-            meganii 
-      %ul(class="share")
-        %li
-          %a(href="http://b.hatena.ne.jp/entry/http%3A%2F%2Frecommendted.heroku.com%2F" class="hatena-bookmark-button" data-hatena-bookmark-title="れこめんてっど" data-hatena-bookmark-layout="standard" title="add")
-            %img(src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="add" width="20" height="20" style="border: none;")
-              %script(type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async")
-        %li
-          
-    .container-fluid
-      = yield
+  %link(href="css/stylesheet.css" rel="stylesheet")
+  %script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js")
+  %script(type="text/javascript" src="javascripts/jquery.easing.1.3.js")
+  %script(type="text/javascript" src="javascripts/jquery.vgrid.0.1.7.min.js")
+  %title="RecommendTed -れこめんてっど"
 
-    #footer
-      footer
+%body
+  :javascript
+    $(function(){
+        var vg = $("#grid-content").vgrid({  
+            easeing: "easeOutQuint",  
+            useLoadImageEvent: true,  
+            ueFontSizeListener: true,
+            time: 400,  
+            delay: 20,  
+            fadeIn: { 
+                time: 500,  
+                delay: 50  
+            }  
+        });
+
+        $(".additem").click(function(e){
+            var _url = $(this).children().attr('src')
+            var _poster = $(this).children().attr('poster')
+            var _item = $('<div>\
+                       <video src="' + _url + '" poster="' + _poster + '" controls width="480px" height="300px"></video>\
+                       <p><a class="delete" href="#">DELETE</a></p>\
+                       </div>')
+                       .hide();
+            vg.prepend(_item);
+            vg.vgrefresh(null, null, null, function(){
+                _item.fadeIn(10);
+            });
+        });
+    });
+  
+  #header
+    %h1
+      RecommendTed - れこめんてっど
+    %p(class="copyright")
+      %small
+        Developed by @
+        %a(href="http://twitter.com/meganii")
+          meganii 
+    %ul(class="share")
+      %li
+        %a(href="http://b.hatena.ne.jp/entry/http%3A%2F%2Frecommendted.heroku.com%2F" class="hatena-bookmark-button" data-hatena-bookmark-title="れこめんてっど" data-hatena-bookmark-layout="standard" title="add")
+          %img(src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="add" width="20" height="20" style="border: none;")
+            %script(type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async")
+
+          
+  #grid-content.container-fluid
+    = yield
+
+  %a(id="additem")
+    add
+
+  #gray-layer
+    test
+  #popup-layer
+    %video(src="http://download.ted.com/talks/MattCutts_2011U-320k.mp4" controls)
+  #footer
+    footer
+
+    
